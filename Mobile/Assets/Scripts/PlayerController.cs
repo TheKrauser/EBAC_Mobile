@@ -38,6 +38,7 @@ public class PlayerController : MonoBehaviour
     {
         if (other.gameObject.CompareTag(endLineTag))
         {
+            canRun = false;
             ui.ShowEndScreen();
         }
     }

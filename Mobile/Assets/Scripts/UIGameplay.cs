@@ -20,7 +20,6 @@ public class UIGameplay : MonoBehaviour
 
     public void ShowEndScreen()
     {
-        player.ToggleCanRun();
         groupEnd.alpha = 1;
         groupEnd.interactable = true;
         groupEnd.blocksRaycasts = true;
