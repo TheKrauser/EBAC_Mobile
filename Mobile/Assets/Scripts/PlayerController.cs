@@ -16,21 +16,31 @@ public class PlayerController : Singleton<PlayerController>
     [SerializeField] private GameObject coinCollector;
 
     private Vector3 pos;
-    private bool canRun;
+    private bool isRunning;
     private bool isInvincible = false;
+    private bool isDead = false;
     private float currentSpeed;
     private Vector3 startPosition;
 
+    private Animator anim;
+
     private void Start()
     {
+        anim = GetComponentInChildren<Animator>();
         startPosition = transform.position;
         ResetSpeed();
     }
 
     private void Update()
     {
-        if (!canRun) return;
-        transform.Translate(transform.forward * currentSpeed * Time.deltaTime);
+        if (isDead) return;
+
+        anim.SetBool("isRunning", isRunning);
+
+        if (!isRunning)
+            return;
+        else
+            transform.Translate(transform.forward * currentSpeed * Time.deltaTime);
     }
 
     private void OnCollisionEnter(Collision other)
@@ -39,7 +49,9 @@ public class PlayerController : Singleton<PlayerController>
         {
             if (isInvincible) return;
 
-            canRun = false;
+            isRunning = false;
+            isDead = true;
+            anim.SetBool("isDead", isDead);
             ui.ShowEndScreen();
         }
     }
@@ -48,14 +60,14 @@ public class PlayerController : Singleton<PlayerController>
     {
         if (other.gameObject.CompareTag(endLineTag))
         {
-            canRun = false;
+            isRunning = false;
             ui.ShowEndScreen();
         }
     }
 
     public void ToggleCanRun()
     {
-        canRun = !canRun;
+        isRunning = !isRunning;
     }
 
     public void SetPowerUpText(string s)
@@ -94,5 +106,10 @@ public class PlayerController : Singleton<PlayerController>
     public void ChangeCoinCollectorSize(float amount)
     {
         coinCollector.transform.localScale = Vector3.one * amount;
+    }
+
+    public Vector3 GetPosition()
+    {
+        return transform.position;
     }
 }
