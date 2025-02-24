@@ -143,4 +143,4 @@ MonoBehaviour:
   coll: {fileID: 5350067153450687616}
   compareTag: CoinCollector
   duration: 5
-  sizeAmount: 4
+  sizeAmount: 10

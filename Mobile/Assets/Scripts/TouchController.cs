@@ -20,6 +20,9 @@ public class TouchController : MonoBehaviour
 
     private void Move(float speed)
     {
-        transform.position += Vector3.right * speed * velocity * Time.deltaTime;
+        var newPosition = transform.position;
+        newPosition.x = Mathf.Clamp(transform.position.x, -6.5f, 6.5f);
+        newPosition += Vector3.right * speed * velocity * Time.deltaTime;
+        transform.position = newPosition;
     }
 }
