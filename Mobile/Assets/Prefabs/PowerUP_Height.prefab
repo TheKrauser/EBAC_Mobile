@@ -61,7 +61,9 @@ MonoBehaviour:
   visuals: {fileID: 9202852632029783047}
   coll: {fileID: 9202852631695818439}
   compareTag: CoinCollector
+  bouncePlayer: 0
   duration: 2
+  particle: {fileID: 100006, guid: 8fc06027b01064e4f885fd8dd2929310, type: 3}
   amountHeight: 2
 --- !u!1 &9202852632029783047
 GameObject:
