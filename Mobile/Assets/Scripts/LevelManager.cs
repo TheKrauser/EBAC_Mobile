@@ -30,6 +30,11 @@ public class LevelManager : Singleton<LevelManager>
             }
         }
 
+        if (container.TryGetComponent<ScaleHelper>(out ScaleHelper scale))
+        {
+            scale.Scale();
+        }
+
         currentLevel = Instantiate(levels[index], container);
         //currentLevel.transform.position = Vector3.zero;
     }

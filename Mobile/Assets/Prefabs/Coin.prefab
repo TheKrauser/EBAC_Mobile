@@ -78,6 +78,7 @@ MonoBehaviour:
   visuals: {fileID: 4103177100613740429}
   coll: {fileID: 1801807380220135888}
   compareTag: CoinCollector
+  bouncePlayer: 1
   collect: 0
   lerp: 8
   minDistance: 1

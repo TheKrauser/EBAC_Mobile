@@ -23,10 +23,14 @@ public class PlayerController : Singleton<PlayerController>
     private Vector3 startPosition;
 
     private Animator anim;
+    public BounceHelper bounce;
+    public ScaleHelper scale;
 
     private void Start()
     {
         anim = GetComponentInChildren<Animator>();
+        bounce = GetComponentInChildren<BounceHelper>();
+        scale = GetComponentInChildren<ScaleHelper>();
         startPosition = transform.position;
         ResetSpeed();
     }
@@ -51,6 +55,7 @@ public class PlayerController : Singleton<PlayerController>
 
             isRunning = false;
             isDead = true;
+            scale.ScaleOut();
             anim.SetBool("isDead", isDead);
             ui.ShowEndScreen();
         }

@@ -255,6 +255,7 @@ MonoBehaviour:
   ui: {fileID: 1014723815}
   uiTextPowerUp: {fileID: 598262495}
   coinCollector: {fileID: 588240627}
+  bounce: {fileID: 0}
 --- !u!54 &143554871
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1456,6 +1457,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 876113224}
+  - component: {fileID: 876113225}
   m_Layer: 0
   m_Name: LevelContainer
   m_TagString: Untagged
@@ -1477,6 +1479,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &876113225
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 876113223}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55fc57d407722564da4f1379828272e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  duration: 0.1
+  startScale: {x: 0, y: 0, z: 1}
+  endScale: {x: 1, y: 1, z: 1}
+  ease: 27
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -2308,3 +2326,40 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &2092196900 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5531986718136724959, guid: 89e20167823a30d459856414377997d1, type: 3}
+  m_PrefabInstance: {fileID: 798013476}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2092196901
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2092196900}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55fc57d407722564da4f1379828272e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  duration: 0.45
+  startScale: {x: 0, y: 0, z: 0}
+  endScale: {x: 0.3836317, y: 0.3836317, z: 0.3836317}
+  ease: 27
+--- !u!114 &2092196902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2092196900}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d1fd69deb252c444971bcdd92e21060, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  duration: 0.2
+  startScale: {x: 0.3836317, y: 0.3836317, z: 0.3836317}
+  punchForce: {x: 0.1, y: 0.1, z: 0.1}
+  ease: 27

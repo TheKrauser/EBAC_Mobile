@@ -7,12 +7,18 @@ public class ItemCollectableBase : MonoBehaviour
     [SerializeField] private GameObject visuals;
     [SerializeField] private Collider coll;
     [SerializeField] private string compareTag = "Player";
+    [SerializeField] private bool bouncePlayer = false;
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.transform.CompareTag(compareTag))
         {
             Collect();
+
+            if (bouncePlayer)
+            {
+                PlayerController.Instance.bounce.Bounce();
+            }
         }
     }
 
